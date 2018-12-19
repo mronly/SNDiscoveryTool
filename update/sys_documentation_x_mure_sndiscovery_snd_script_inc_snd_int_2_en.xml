@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="snd_int_2" label="Snd int 2" language="en" table="x_mure_sndiscovery_snd_script_inc">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>snd_int_2</element>
+            <help/>
+            <hint/>
+            <label>Snd int 2</label>
+            <language>en</language>
+            <name>x_mure_sndiscovery_snd_script_inc</name>
+            <plural>Snd int 2s</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>marcus.rippel</sys_created_by>
+            <sys_created_on>2018-12-19 07:53:53</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>5855a2dcdb6e67c0314cbedffe9619a3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Snd int 2</sys_name>
+            <sys_package display_value="SNDiscoveryTool" source="x_mure_sndiscovery">3acd19bedb96ef80587fbc2ffe9619df</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="SNDiscoveryTool">3acd19bedb96ef80587fbc2ffe9619df</sys_scope>
+            <sys_update_name>sys_documentation_x_mure_sndiscovery_snd_script_inc_snd_int_2_en</sys_update_name>
+            <sys_updated_by>marcus.rippel</sys_updated_by>
+            <sys_updated_on>2018-12-19 07:53:53</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

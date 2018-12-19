@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="cmdb_ci" label="label" max_length="40" name="SND Root Test1" type="collection">
+        <element attributes="import_attribute_name=App Scope,edge_encryption_enabled=true" label="App Scope" max_length="40" name="app_scope" type="string"/>
+    </element>
+</database>

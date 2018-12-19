@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="task" label="Discovery Task" max_length="40" name="x_mure_sndiscovery_discovery_task" sizeclass="1" type="collection"/>
+</database>

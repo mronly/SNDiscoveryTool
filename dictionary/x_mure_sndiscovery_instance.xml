@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="Instance" max_length="40" name="x_mure_sndiscovery_instance" sizeclass="2" type="collection">
+        <element label="Discover Password" max_length="40" name="d_pwd" type="password"/>
+        <element label="Discovery User" max_length="40" name="d_user" type="string"/>
+        <element label="Init on" max_length="40" name="init_on" type="glide_date_time"/>
+        <element label="Last Scan" max_length="40" name="last_scan" type="glide_date_time"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+        <element label="Report Summary" max_length="8000" name="report_summary" type="html"/>
+        <element label="RootQuery" max_length="250" name="rootquery" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="nameINchange_request,cmdb_ci,sys_users,cmdb_model,cmdb_model_category,task_ci,cds_client_staging,cds_client_mapping,core_company" label="Base Query" mandatory="true" max_length="300" name="u_base_query" type="string"/>
+        <element default="100" label="Max Items" mandatory="true" max_length="40" name="u_d_maxitems" type="integer"/>
+    </element>
+</database>

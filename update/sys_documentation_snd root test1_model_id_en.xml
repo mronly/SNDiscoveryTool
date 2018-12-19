@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="model_id" label="Model ID" language="en" table="SND Root Test1">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>model_id</element>
+            <help/>
+            <hint/>
+            <label>Model ID</label>
+            <language>en</language>
+            <name>SND Root Test1</name>
+            <plural>Model IDs</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>marcus.rippel</sys_created_by>
+            <sys_created_on>2018-12-17 06:45:34</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>008284b7db5aa3c0587fbc2ffe961969</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Model ID</sys_name>
+            <sys_package display_value="SNDiscoveryTool" source="x_mure_sndiscovery">3acd19bedb96ef80587fbc2ffe9619df</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="SNDiscoveryTool">3acd19bedb96ef80587fbc2ffe9619df</sys_scope>
+            <sys_update_name>sys_documentation_SND Root Test1_model_id_en</sys_update_name>
+            <sys_updated_by>marcus.rippel</sys_updated_by>
+            <sys_updated_on>2018-12-17 06:45:34</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

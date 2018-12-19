@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_mure_sndiscovery.SND_CI</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>SND_CI</name>
+        <script><![CDATA[var SND_CI = Class.create();
+SND_CI.prototype = {
+    initialize: function() {
+		this.config = {
+			"maxItems"   : 30,
+			"remoteUser" : "MR_SND",
+            "remotePwd"  : "e$51B8KZSb",
+            "instance"   : "123456789",
+			"storeXML"   : true,
+			"paging"     : 100,
+			"baseQuery"  : '',
+		};
+		this.report = {
+			"count" : 0,
+			"msg"   : {
+				"info"   : [],
+				"error" : []
+			}
+		};
+    },
+	setConfig: function(SND_Config){
+		this.config = SND_Config;
+	},
+	cleanUpAll: function() {
+		var arrSNTables = [
+				'x_mure_sndiscovery_snd_root'
+		];
+		for (var i = 0; i < arrSNTables.length; i++) {
+            var cleanTable = new GlideRecord(arrSNTables[i]);
+            cleanTable.addQuery('remote_instance',this.config.instance);
+            cleanTable.query();
+			cleanTable.deleteMultiple();
+		}
+	},
+    create: function( objRecord, strNameField, strTable, objRelation) {
+		var gr = new GlideRecord(strTable);
+		var nameValue = objRecord[strNameField].display_value;
+		var tmpScript = '';
+		if(nameValue != null && nameValue != '') {
+			try { 
+				gr.initialize();
+				gr['name'] = nameValue;
+				gr['remote_instance'] = this.config.instance;
+				
+				if('app_scope' in gr) {
+					try{
+						gr['app_scope'] = objRecord.sys_scope.display_value;
+					} catch (e) {
+					    this.report.msg.info.push('no display vlaue for sys_scope');
+					}
+				}
+				
+				gr['remotesysid'] = objRecord.sys_id.display_value;
+				//script Business Rules
+				
+				if(objRecord.sys_class_name.value == 'sys_script' ) {
+					tmpScript = objRecord.script.value;
+					gr['scripts'] = tmpScript;	
+				}
+
+				//store xml
+				if(this.config.storeXML == true) {
+					gr['raw_xml'] = global.JSON.stringify(objRecord, null, 4);
+				}
+				gr.insert();
+				this.report.count++;
+			} catch(e) {
+				this.report.msg.error.push(e);	
+			}
+				//script Business Rules
+			if(objRecord.sys_class_name.value == 'sys_script' ) {
+				var resVal = null;
+				var res = null;
+			    //GlideRecords
+				var r = new RegExp(/GlideRecord\([\"'](.*?)[\"']/gmi);
+				while (res= r.exec(tmpScript)) {
+				  if(res[1] != undefined && res[1] != null && res[1] != '')
+					gs.info("GlideRecord: set Relations: "  + res[1]);
+				    resVal = this.getSysIdByNameType(res[1],'table');
+					if (resVal != undefined && resVal != -1) {
+						gs.info('GlideRecord: create relation: ' + gr.sys_id + ' to: ' + resVal );
+						this.createRelation( resVal, gr.sys_id, '6afd799338a02000c18673032c71b87b' );
+					}
+				}
+				//ScriptIncludes
+				var regEx_Si = new RegExp(/new (.*?)*(.*?)\(/gmi);
+				while (res= regEx_Si.exec(tmpScript)) {
+				  if(res[1] != undefined && res[1] != null && res[1] != '')
+					gs.info("ScriptInclude: set Relations: "  + res[1]);
+					//Todo change table
+				    resVal = this.getSysIdByNameType(res[1],'script_inc');
+					if (resVal != undefined && resVal != -1) {
+						gs.info('Script Include: create relation: ' + gr.sys_id + ' to: ' + resVal );
+						this.createRelation( resVal, gr.sys_id, '6afd799338a02000c18673032c71b87b' );
+					}
+				}
+			}
+			
+			
+			if(objRelation != null) {
+				gs.info('create relation: ' + gr.sys_id + ' to: ' + objRelation.sys_id );
+				this.createRelation( gr.sys_id, objRelation.sys_id, '6afd799338a02000c18673032c71b87b' );
+			}
+			
+			
+			//if column object
+			if(objRecord.sys_class_name.value == 'sys_dictionary' ) {
+				//check if reference field
+				gs.info('internal_type: ' + objRecord.internal_type.display_value);
+				if(objRecord.internal_type.display_value == 'Reference') {
+					gs.info('reference: ' + objRecord.reference.value );
+					var retVal = this.getSysIdByName(objRecord.reference.value);
+					if(retVal != -1 && retVal != undefined) {
+						gs.info('create relation: ' + gr.sys_id + ' to: ' + retVal );
+						this.createRelation( retVal, gr.sys_id, '6afd799338a02000c18673032c71b87b' );
+					}
+				}
+			}
+		}
+	},
+	getSysIdByRemoteSysID: function(remoteSysId) {
+		var retVal = -1;
+		var gr = new GlideRecord('x_mure_sndiscovery_snd_root');
+		gr.addQuery('remotesysid',remoteSysId);
+		gr.query();
+		while (gr.next()) { 
+			retVal = gr.sys_id;
+		}
+		return retVal;
+	},
+	getSysIdByName: function(remoteName) {
+		var retVal = -1;
+		var gr = new GlideRecord('x_mure_sndiscovery_snd_root');
+        gr.addQuery('name',remoteName);
+        gr.addQuery('remote_instance', this.config.instance);
+		gr.query();
+		while (gr.next()) { 
+			retVal = gr.sys_id;
+		}
+		return retVal;
+	},
+	getSysIdByNameType: function(remoteName,type) {
+		var retVal = -1;
+		var gr = new GlideRecord('x_mure_sndiscovery_snd_root');
+        gr.addQuery('name',remoteName);
+		gr.addQuery('sys_class_name', 'x_mure_sndiscovery_snd_' + type);
+        gr.addQuery('remote_instance', this.config.instance);
+		gr.query();
+		while (gr.next()) { 
+			retVal = gr.sys_id;
+		}
+		return retVal;
+	},
+	createRelation: function(from_sysid, to_sysid, type) {
+			var grIn = new GlideRecord('cmdb_rel_ci');
+			grIn.initialize();
+			grIn.parent = from_sysid;
+			grIn.child = to_sysid;
+			grIn.type = type ; // sys_id of the Relationship Type
+			grIn.insert();
+	},
+	CallRemoteInstanceTable: function(strTable, strQuery, strNameField, strCIClass, objRelation) {
+		try{
+			//max Items handler
+			var strMaxItems = '&sysparm_limit=' + this.config.maxItems;
+			if(this.config.maxItems < 0) {
+				strMaxItems = '';
+			}
+			var request = new sn_ws.RESTMessageV2();
+			gs.info('config: ' + this.config.remotePwd);
+			request.setBasicAuth(this.config.remoteUser, this.config.remotePwd);
+			request.setHttpMethod('get');
+			var strEndpoint = 'https://munichredev.service-now.com/api/now/table/' + strTable + '?sysparm_query=' + strQuery + strMaxItems + '&sysparm_offset=0&sysparm_display_value=all';
+			request.setEndpoint(strEndpoint);
+			gs.info('strEndpoint: ' + strEndpoint);
+			var response = request.execute();
+			var httpResponseStatus = response.getStatusCode();
+			var httpResponseContentType = response.getHeader('Content-Type');
+			var totalCount = response.getHeader('X-Total-Count');
+			var allHeaders = response.getAllHeaders();
+			var parsed;
+			var httpResponseBody;
+
+			
+			gs.debug("http response status_code: " + httpResponseStatus);
+			gs.debug("http response content-type: " + httpResponseContentType);
+			gs.debug("http response x-total-count: " + totalCount);
+			gs.debug("http response all headers: " + allHeaders);
+			//max records lower than total count
+			if(this.config.maxItems < totalCount) {
+				var strMsg = strTable + ' is having more records: ' + totalCount;
+				this.report.msg.info.push(strMsg);
+			}
+			
+			//  if request is successful then parse the response body
+			if (httpResponseStatus == 200 && (httpResponseContentType.indexOf("application/json")>-1)) {
+				gs.debug("response parsing");
+				httpResponseBody = response.getBody();
+				//  parse JSON string returned from request into a json object
+				parsed = new global.JSON().decode(httpResponseBody);
+				gs.debug("http response count: " + parsed.result.length);
+				// iterate over JSON object only printing the id property of JSON objects in results array
+				for (var i = 0; i < parsed.result.length; i++) {
+					gs.info('name: ' + parsed.result[i][strNameField].display_value);
+
+					this.create(parsed.result[i],strNameField,strCIClass, objRelation);
+				}
+			}
+		}
+		catch (ex) {
+			var message = ex.getMessage();
+			gs.info(message);
+		}
+		var tmpConfig = global.JSON.parse(global.JSON.stringify(this.config));
+		delete tmpConfig["remotePwd"];
+		this.report["config"] = tmpConfig;
+		return this.report;
+	},
+	writeReportToInstanceRecord: function (strReport) {
+		var SNDInstance =  new GlideRecord('x_mure_sndiscovery_instance');
+		SNDInstance.addActiveQuery();
+		SNDInstance.addQuery('sys_id',this.config.instance);
+		SNDInstance.query(); 
+		while (SNDInstance.next()) { 
+			SNDInstance.work_notes = 'Discovery summary:\n\r' + strReport;
+			SNDInstance.last_scan =  new GlideDateTime().getDisplayValue();
+			SNDInstance.update();
+		}
+	},
+    type: 'SND_CI'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>marcus.rippel</sys_created_by>
+        <sys_created_on>2018-12-16 10:04:08</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ac56e3d7db56a3c0314cbedffe961912</sys_id>
+        <sys_mod_count>113</sys_mod_count>
+        <sys_name>SND_CI</sys_name>
+        <sys_package display_value="SNDiscoveryTool" source="x_mure_sndiscovery">3acd19bedb96ef80587fbc2ffe9619df</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SNDiscoveryTool">3acd19bedb96ef80587fbc2ffe9619df</sys_scope>
+        <sys_update_name>sys_script_include_ac56e3d7db56a3c0314cbedffe961912</sys_update_name>
+        <sys_updated_by>marcus.rippel</sys_updated_by>
+        <sys_updated_on>2018-12-19 09:06:33</sys_updated_on>
+    </sys_script_include>
+</record_update>

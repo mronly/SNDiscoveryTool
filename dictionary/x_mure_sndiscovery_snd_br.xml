@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="x_mure_sndiscovery_snd_root" label="SND Business Rule" max_length="40" name="x_mure_sndiscovery_snd_br" sizeclass="89" type="collection">
+        <element attributes="import_attribute_name=app_scope,edge_encryption_enabled=true" label="App scope" max_length="40" name="app_scope" type="string"/>
+        <element label="raw XML" max_length="8000" name="raw_xml" type="html"/>
+        <element label="RemoteSysId" max_length="40" name="remotesysid" type="string"/>
+        <element label="Remote Instance" max_length="32" name="remote_instance" reference="x_mure_sndiscovery_instance" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Scripts" max_length="4000" name="scripts" type="string"/>
+        <element label="Snd int 1" max_length="10" name="snd_int_1" type="integer"/>
+        <element label="Snd int 2" max_length="10" name="snd_int_2" type="integer"/>
+        <element label="Table Referenze" max_length="32" name="table_referenze" reference="x_mure_sndiscovery_snd_table" type="reference"/>
+    </element>
+</database>
