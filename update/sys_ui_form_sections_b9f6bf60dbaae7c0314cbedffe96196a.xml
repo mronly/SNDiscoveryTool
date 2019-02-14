@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="b9f6bf60dbaae7c0314cbedffe96196a" sys_domain="global" table="wf_activity_variable" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>marcus.rippel</sys_created_by>
+            <sys_created_on>2018-12-20 08:29:05</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b1f6bf60dbaae7c0314cbedffe961971</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="wf_activity_variable" name="wf_activity_variable" sys_domain="global" view="7966be310a0a0b8c00bd504090503227">b9f6bf60dbaae7c0314cbedffe96196a</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="wf_activity_variable" sys_domain="global" view="7966be310a0a0b8c00bd504090503227">71f6bf60dbaae7c0314cbedffe96196e</sys_ui_section>
+            <sys_updated_by>marcus.rippel</sys_updated_by>
+            <sys_updated_on>2018-12-20 08:29:05</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>marcus.rippel</sys_created_by>
+            <sys_created_on>2018-12-20 08:29:05</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fdf6bf60dbaae7c0314cbedffe961973</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="wf_activity_variable" name="wf_activity_variable" sys_domain="global" view="7966be310a0a0b8c00bd504090503227">b9f6bf60dbaae7c0314cbedffe96196a</sys_ui_form>
+            <sys_ui_section caption="Reference Specification" display_value="Reference Specification" name="wf_activity_variable" sys_domain="global" view="7966be310a0a0b8c00bd504090503227">b5f6bf60dbaae7c0314cbedffe961971</sys_ui_section>
+            <sys_updated_by>marcus.rippel</sys_updated_by>
+            <sys_updated_on>2018-12-20 08:29:05</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>marcus.rippel</sys_created_by>
+            <sys_created_on>2018-12-20 08:29:05</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7df6bf60dbaae7c0314cbedffe961976</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="wf_activity_variable" name="wf_activity_variable" sys_domain="global" view="7966be310a0a0b8c00bd504090503227">b9f6bf60dbaae7c0314cbedffe96196a</sys_ui_form>
+            <sys_ui_section caption="Choice List Specification" display_value="Choice List Specification" name="wf_activity_variable" sys_domain="global" view="7966be310a0a0b8c00bd504090503227">b9f6bf60dbaae7c0314cbedffe961975</sys_ui_section>
+            <sys_updated_by>marcus.rippel</sys_updated_by>
+            <sys_updated_on>2018-12-20 08:29:05</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>marcus.rippel</sys_created_by>
+            <sys_created_on>2018-12-20 08:29:05</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7df6bf60dbaae7c0314cbedffe96196d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="wf_activity_variable" name="wf_activity_variable" sys_domain="global" view="7966be310a0a0b8c00bd504090503227">b9f6bf60dbaae7c0314cbedffe96196a</sys_ui_form>
+            <sys_ui_section caption="Function Definition" display_value="Function Definition" name="wf_activity_variable" sys_domain="global" view="7966be310a0a0b8c00bd504090503227">31f6bf60dbaae7c0314cbedffe96196d</sys_ui_section>
+            <sys_updated_by>marcus.rippel</sys_updated_by>
+            <sys_updated_on>2018-12-20 08:29:05</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>4</position>
+            <sys_created_by>marcus.rippel</sys_created_by>
+            <sys_created_on>2018-12-20 08:29:05</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>35f6bf60dbaae7c0314cbedffe961978</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="wf_activity_variable" name="wf_activity_variable" sys_domain="global" view="7966be310a0a0b8c00bd504090503227">b9f6bf60dbaae7c0314cbedffe96196a</sys_ui_form>
+            <sys_ui_section caption="Dependent Field" display_value="Dependent Field" name="wf_activity_variable" sys_domain="global" view="7966be310a0a0b8c00bd504090503227">71f6bf60dbaae7c0314cbedffe961977</sys_ui_section>
+            <sys_updated_by>marcus.rippel</sys_updated_by>
+            <sys_updated_on>2018-12-20 08:29:05</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>5</position>
+            <sys_created_by>marcus.rippel</sys_created_by>
+            <sys_created_on>2018-12-20 08:29:05</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>79f6bf60dbaae7c0314cbedffe961979</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="wf_activity_variable" name="wf_activity_variable" sys_domain="global" view="7966be310a0a0b8c00bd504090503227">b9f6bf60dbaae7c0314cbedffe96196a</sys_ui_form>
+            <sys_ui_section caption="Calculated Value" display_value="Calculated Value" name="wf_activity_variable" sys_domain="global" view="7966be310a0a0b8c00bd504090503227">39f6bf60dbaae7c0314cbedffe961978</sys_ui_section>
+            <sys_updated_by>marcus.rippel</sys_updated_by>
+            <sys_updated_on>2018-12-20 08:29:05</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>6</position>
+            <sys_created_by>marcus.rippel</sys_created_by>
+            <sys_created_on>2018-12-20 08:29:05</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b5f6bf60dbaae7c0314cbedffe961975</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="wf_activity_variable" name="wf_activity_variable" sys_domain="global" view="7966be310a0a0b8c00bd504090503227">b9f6bf60dbaae7c0314cbedffe96196a</sys_ui_form>
+            <sys_ui_section caption="Default Value" display_value="Default Value" name="wf_activity_variable" sys_domain="global" view="7966be310a0a0b8c00bd504090503227">f1f6bf60dbaae7c0314cbedffe961974</sys_ui_section>
+            <sys_updated_by>marcus.rippel</sys_updated_by>
+            <sys_updated_on>2018-12-20 08:29:05</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>wf_activity_variable</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>marcus.rippel</sys_created_by>
+            <sys_created_on>2018-12-20 08:29:05</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b9f6bf60dbaae7c0314cbedffe96196a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>wf_activity_variable</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="SNDiscoveryTool" source="x_mure_sndiscovery">3acd19bedb96ef80587fbc2ffe9619df</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="SNDiscoveryTool">3acd19bedb96ef80587fbc2ffe9619df</sys_scope>
+            <sys_update_name>sys_ui_form_sections_b9f6bf60dbaae7c0314cbedffe96196a</sys_update_name>
+            <sys_updated_by>marcus.rippel</sys_updated_by>
+            <sys_updated_on>2018-12-20 08:29:05</sys_updated_on>
+            <sys_user/>
+            <view display_value="Advanced" name="advanced">7966be310a0a0b8c00bd504090503227</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

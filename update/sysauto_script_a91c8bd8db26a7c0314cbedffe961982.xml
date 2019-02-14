@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <conditional>false</conditional>
+        <name>SND Delete all records</name>
+        <run_as display_value="Marcus Rippel">99e2c3d1db5ee600587fbc2ffe961989</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2018-12-19 10:43:15</run_start>
+        <run_time>1969-12-31 23:00:00</run_time>
+        <run_type>on_demand</run_type>
+        <script><![CDATA[try{
+	var SND_config = {
+		"instance" : "f8e3e5badbd6ef80587fbc2ffe9619d5",
+	};
+	var SND = new x_mure_sndiscovery.SND_CI();
+	SND.setConfig(SND_config);
+	SND.cleanUpAll();
+} catch (e) {
+	
+}]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>marcus.rippel</sys_created_by>
+        <sys_created_on>2018-12-19 10:44:37</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a91c8bd8db26a7c0314cbedffe961982</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SND Delete all records</sys_name>
+        <sys_package display_value="SNDiscoveryTool" source="x_mure_sndiscovery">3acd19bedb96ef80587fbc2ffe9619df</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SNDiscoveryTool">3acd19bedb96ef80587fbc2ffe9619df</sys_scope>
+        <sys_update_name>sysauto_script_a91c8bd8db26a7c0314cbedffe961982</sys_update_name>
+        <sys_updated_by>marcus.rippel</sys_updated_by>
+        <sys_updated_on>2018-12-19 10:44:37</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

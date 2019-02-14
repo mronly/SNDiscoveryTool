@@ -4,139 +4,153 @@
             <element>name</element>
             <position>0</position>
             <sys_created_by>marcus.rippel</sys_created_by>
-            <sys_created_on>2018-12-17 12:43:16</sys_created_on>
-            <sys_id>c06495bfdb9ae3c0314cbedffe961956</sys_id>
+            <sys_created_on>2018-12-20 08:20:54</sys_created_on>
+            <sys_id>7115f320dbaae7c0314cbedffe9619dc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_mure_sndiscovery_snd_column" sys_domain="global" view="Default view">0b3730bfdb5ea3c0587fbc2ffe961947</sys_ui_section>
             <sys_updated_by>marcus.rippel</sys_updated_by>
-            <sys_updated_on>2018-12-17 12:43:16</sys_updated_on>
+            <sys_updated_on>2018-12-20 08:20:54</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>table_referenze</element>
+            <position>1</position>
+            <sys_created_by>marcus.rippel</sys_created_by>
+            <sys_created_on>2018-12-20 08:20:54</sys_created_on>
+            <sys_id>f515f320dbaae7c0314cbedffe9619dc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_mure_sndiscovery_snd_column" sys_domain="global" view="Default view">0b3730bfdb5ea3c0587fbc2ffe961947</sys_ui_section>
+            <sys_updated_by>marcus.rippel</sys_updated_by>
+            <sys_updated_on>2018-12-20 08:20:54</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>remotesysid</element>
-            <position>1</position>
+            <position>2</position>
             <sys_created_by>marcus.rippel</sys_created_by>
-            <sys_created_on>2018-12-17 12:43:16</sys_created_on>
-            <sys_id>486495bfdb9ae3c0314cbedffe961956</sys_id>
+            <sys_created_on>2018-12-20 08:20:54</sys_created_on>
+            <sys_id>7915f320dbaae7c0314cbedffe9619dc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_mure_sndiscovery_snd_column" sys_domain="global" view="Default view">0b3730bfdb5ea3c0587fbc2ffe961947</sys_ui_section>
             <sys_updated_by>marcus.rippel</sys_updated_by>
-            <sys_updated_on>2018-12-17 12:43:16</sys_updated_on>
+            <sys_updated_on>2018-12-20 08:20:54</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>remote_instance</element>
-            <position>2</position>
+            <position>3</position>
             <sys_created_by>marcus.rippel</sys_created_by>
-            <sys_created_on>2018-12-17 12:43:16</sys_created_on>
-            <sys_id>c86495bfdb9ae3c0314cbedffe961956</sys_id>
+            <sys_created_on>2018-12-20 08:20:54</sys_created_on>
+            <sys_id>f915f320dbaae7c0314cbedffe9619dc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_mure_sndiscovery_snd_column" sys_domain="global" view="Default view">0b3730bfdb5ea3c0587fbc2ffe961947</sys_ui_section>
             <sys_updated_by>marcus.rippel</sys_updated_by>
-            <sys_updated_on>2018-12-17 12:43:16</sys_updated_on>
+            <sys_updated_on>2018-12-20 08:20:54</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>asset_tag</element>
-            <position>3</position>
+            <position>4</position>
             <sys_created_by>marcus.rippel</sys_created_by>
-            <sys_created_on>2018-12-17 12:43:16</sys_created_on>
-            <sys_id>4c6495bfdb9ae3c0314cbedffe961956</sys_id>
+            <sys_created_on>2018-12-20 08:20:54</sys_created_on>
+            <sys_id>7d15f320dbaae7c0314cbedffe9619dc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_mure_sndiscovery_snd_column" sys_domain="global" view="Default view">0b3730bfdb5ea3c0587fbc2ffe961947</sys_ui_section>
             <sys_updated_by>marcus.rippel</sys_updated_by>
-            <sys_updated_on>2018-12-17 12:43:16</sys_updated_on>
+            <sys_updated_on>2018-12-20 08:20:54</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>assigned_to</element>
-            <position>4</position>
+            <position>5</position>
             <sys_created_by>marcus.rippel</sys_created_by>
-            <sys_created_on>2018-12-17 12:43:16</sys_created_on>
-            <sys_id>cc6495bfdb9ae3c0314cbedffe961956</sys_id>
+            <sys_created_on>2018-12-20 08:20:54</sys_created_on>
+            <sys_id>fd15f320dbaae7c0314cbedffe9619dc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_mure_sndiscovery_snd_column" sys_domain="global" view="Default view">0b3730bfdb5ea3c0587fbc2ffe961947</sys_ui_section>
             <sys_updated_by>marcus.rippel</sys_updated_by>
-            <sys_updated_on>2018-12-17 12:43:16</sys_updated_on>
+            <sys_updated_on>2018-12-20 08:20:54</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>category</element>
-            <position>5</position>
+            <position>6</position>
             <sys_created_by>marcus.rippel</sys_created_by>
-            <sys_created_on>2018-12-17 12:43:16</sys_created_on>
-            <sys_id>406495bfdb9ae3c0314cbedffe961957</sys_id>
+            <sys_created_on>2018-12-20 08:20:54</sys_created_on>
+            <sys_id>7115f320dbaae7c0314cbedffe9619dd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_mure_sndiscovery_snd_column" sys_domain="global" view="Default view">0b3730bfdb5ea3c0587fbc2ffe961947</sys_ui_section>
             <sys_updated_by>marcus.rippel</sys_updated_by>
-            <sys_updated_on>2018-12-17 12:43:16</sys_updated_on>
+            <sys_updated_on>2018-12-20 08:20:54</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>fault_count</element>
-            <position>6</position>
+            <position>7</position>
             <sys_created_by>marcus.rippel</sys_created_by>
-            <sys_created_on>2018-12-17 12:43:16</sys_created_on>
-            <sys_id>c06495bfdb9ae3c0314cbedffe961957</sys_id>
+            <sys_created_on>2018-12-20 08:20:54</sys_created_on>
+            <sys_id>f115f320dbaae7c0314cbedffe9619dd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_mure_sndiscovery_snd_column" sys_domain="global" view="Default view">0b3730bfdb5ea3c0587fbc2ffe961947</sys_ui_section>
             <sys_updated_by>marcus.rippel</sys_updated_by>
-            <sys_updated_on>2018-12-17 12:43:16</sys_updated_on>
+            <sys_updated_on>2018-12-20 08:20:54</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>install_date</element>
-            <position>7</position>
+            <position>8</position>
             <sys_created_by>marcus.rippel</sys_created_by>
-            <sys_created_on>2018-12-17 12:43:16</sys_created_on>
-            <sys_id>446495bfdb9ae3c0314cbedffe961957</sys_id>
+            <sys_created_on>2018-12-20 08:20:54</sys_created_on>
+            <sys_id>7515f320dbaae7c0314cbedffe9619dd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_mure_sndiscovery_snd_column" sys_domain="global" view="Default view">0b3730bfdb5ea3c0587fbc2ffe961947</sys_ui_section>
             <sys_updated_by>marcus.rippel</sys_updated_by>
-            <sys_updated_on>2018-12-17 12:43:16</sys_updated_on>
+            <sys_updated_on>2018-12-20 08:20:54</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>install_status</element>
-            <position>8</position>
+            <position>9</position>
             <sys_created_by>marcus.rippel</sys_created_by>
-            <sys_created_on>2018-12-17 12:43:16</sys_created_on>
-            <sys_id>c46495bfdb9ae3c0314cbedffe961957</sys_id>
+            <sys_created_on>2018-12-20 08:20:54</sys_created_on>
+            <sys_id>f515f320dbaae7c0314cbedffe9619dd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_mure_sndiscovery_snd_column" sys_domain="global" view="Default view">0b3730bfdb5ea3c0587fbc2ffe961947</sys_ui_section>
             <sys_updated_by>marcus.rippel</sys_updated_by>
-            <sys_updated_on>2018-12-17 12:43:16</sys_updated_on>
+            <sys_updated_on>2018-12-20 08:20:54</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>ui_ng_relation_formatter.xml</element>
-            <position>9</position>
+            <position>10</position>
             <sys_created_by>marcus.rippel</sys_created_by>
-            <sys_created_on>2018-12-17 12:43:16</sys_created_on>
-            <sys_id>486495bfdb9ae3c0314cbedffe961957</sys_id>
+            <sys_created_on>2018-12-20 08:20:54</sys_created_on>
+            <sys_id>7915f320dbaae7c0314cbedffe9619dd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter display_value="CI Relations">b62309137f32310009fedf92bdfa912b</sys_ui_formatter>
             <sys_ui_section caption="NULL" display_value="" name="x_mure_sndiscovery_snd_column" sys_domain="global" view="Default view">0b3730bfdb5ea3c0587fbc2ffe961947</sys_ui_section>
             <sys_updated_by>marcus.rippel</sys_updated_by>
-            <sys_updated_on>2018-12-17 12:43:16</sys_updated_on>
+            <sys_updated_on>2018-12-20 08:20:54</sys_updated_on>
             <sys_user/>
             <type>formatter</type>
         </sys_ui_element>

@@ -32,15 +32,16 @@ SND.cleanUpAll();
 var res = SND.CallRemoteInstanceTable('sys_scope','true', 'name','x_mure_sndiscovery_snd_app_scope');
 this.report.details.push(res);
 
+// get all tables
+var defaultSNTables = '%5EORnameLIKEsys_user%5EORnameLIKEsys_script%5EORnameINsys_properties,contract_sla';
+var tQuery = 'nameLIKEs%5EORnameLIKEx%5EORnameLIKEc%5EORnameLIKEi' + defaultSNTables;
+var res = SND.CallRemoteInstanceTable('sys_db_object',tQuery, 'name','x_mure_sndiscovery_snd_table');
+this.report.details.push(res);
+
 //get script include sys_script_include
 var res = SND.CallRemoteInstanceTable('sys_script_include','true', 'name','x_mure_sndiscovery_snd_script_inc');
 this.report.details.push(res);
 
-// get all tables
-var defaultSNTables = '%5EORnameLIKEsys_user%5EORnameLIKEsys_script%5EORnameINsys_properties,contract_sla';
-var tQuery = 'nameLIKEs%5EORnameLIKEx%5EORnameLIKEc%5EORnameLIKEw' + defaultSNTables;
-var res = SND.CallRemoteInstanceTable('sys_db_object',tQuery, 'name','x_mure_sndiscovery_snd_table');
-this.report.details.push(res);
 
 // get all 
 var SNDTables =  new GlideRecord('x_mure_sndiscovery_snd_table');
@@ -71,7 +72,7 @@ gs.debug(global.JSON.stringify(this.report, null, 4));]]></script>
         <sys_created_on>2018-12-18 12:58:24</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>08412a00dbee27c0314cbedffe9619e9</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>SND Start Discovery</sys_name>
         <sys_package display_value="SNDiscoveryTool" source="x_mure_sndiscovery">3acd19bedb96ef80587fbc2ffe9619df</sys_package>
         <sys_policy/>
@@ -79,7 +80,7 @@ gs.debug(global.JSON.stringify(this.report, null, 4));]]></script>
         <sys_scope display_value="SNDiscoveryTool">3acd19bedb96ef80587fbc2ffe9619df</sys_scope>
         <sys_update_name>sysauto_script_08412a00dbee27c0314cbedffe9619e9</sys_update_name>
         <sys_updated_by>marcus.rippel</sys_updated_by>
-        <sys_updated_on>2018-12-19 09:32:44</sys_updated_on>
+        <sys_updated_on>2018-12-19 13:57:43</sys_updated_on>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
 </record_update>

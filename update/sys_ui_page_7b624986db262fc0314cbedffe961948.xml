@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[function actionOK(strMsg) {
+	if(isEmpty(strMsg)) {
+		strMsg = '###Test: no message';
+	}
+	alert(strMsg);
+	return;
+}
+
+function isEmpty(val){
+	return (val === undefined || val == null || val.length <= 0) ? true : false;
+}
+
+function setActionButton(id, value) {
+	actionOK(id + ' clicked');
+  var runButton = $(id + '');
+  if (value == "")
+    runButton.disabled = "true";
+  else
+    runButton.disabled = "";
+	
+progress(Math.floor((100*100.0)/(200*1.0)) + "%");
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_mure_sndiscovery_SND_Convertion_Options.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g:macro
+     ok="actionOK()"
+     ok_id="run_Btn_"
+     ok_type="submit"
+  />
+	<g:evaluate var="jvar_arrColors" object="true">
+		arrColors = ['Red', 'Black', 'Blue', 'Brown', 'CadetBlue', 'DarkGreen', 'DeepPink'];
+	</g:evaluate>
+Current SysId: <br/>
+Current Table: <br/>
+<g:ui_form>
+	<style>
+		#myProgress {
+			position: relative;
+			width: 100%;
+			height: 30px;
+			background-color: #FFFFFF;
+		}
+
+		#myBar {
+		  position: absolute;
+		  width: 0%;
+		  height: 100%;
+		  background-color: #4CAF50;
+		}
+	</style>
+	<!-- Get values from dialog preferences passed in -->
+  <g:evaluate var="jvar_raw_xml_text" expression="RP.getWindowProperties().raw_xml_text" object="true" />
+	
+	<j:if test="${jvar_raw_xml_text=='*Undefined(RP.getWindowProperties().raw_xml_text'}">
+		test empty value raw_xml_text
+   </j:if>
+	<j:if test="${empty(RP.getWindowProperties().raw_xml_text)}">
+		test empty value raw_xml_text
+   </j:if>
+	<j:if test="${!jvar_raw_xml_text}">
+		test not value raw_xml_text
+   </j:if>
+   <table width="100%" style="table-layout:fixed;">
+	<tr>
+		<th>Nr.</th>
+		<th>Name</th>
+		<th>lastRun</th>
+		<th>DoAction</th>
+	</tr>
+	<j:forEach items="${jvar_arrColors}" var="jvar_Color" indexVar="jvar_i">
+		<tr>
+			<td>${jvar_i}</td>
+			<td>${jvar_Color} </td>
+			<td></td>
+			<td>
+				<g:dialog_button
+					id="${jvar_ok_id}${jvar_i}"
+					type="${jvar_ok_type}"
+				    onclick="setActionButton('run_Btn_${jvar_i}', false)"
+					class=".btn-primary"
+				    style="width: 5em;background-color: #278efc;color: #fff;">${gs.getMessage('Run')}
+				</g:dialog_button>
+			</td>
+		</tr>
+	</j:forEach>   
+     <tr id="description_row" valign="top">
+        <td colspan="2">
+			test
+           <!-- Short description value used as a label -->
+           ${jvar_raw_xml_text}
+        </td>
+     </tr>
+	 <tr><td align="left" nowrap="true"><br /><g:dialog_buttons_ok_cancel ok="" ok_type="submit" cancel=""/></td></tr>   
+  </table>
+	<div id="myProgress">
+		<div id="myBar"></div>
+	</div>
+</g:ui_form>
+</j:jelly>]]></html>
+        <name>SND_Convertion_Options</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>marcus.rippel</sys_created_by>
+        <sys_created_on>2018-12-24 11:20:46</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>7b624986db262fc0314cbedffe961948</sys_id>
+        <sys_mod_count>58</sys_mod_count>
+        <sys_name>SND_Convertion_Options</sys_name>
+        <sys_package display_value="SNDiscoveryTool" source="x_mure_sndiscovery">3acd19bedb96ef80587fbc2ffe9619df</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SNDiscoveryTool">3acd19bedb96ef80587fbc2ffe9619df</sys_scope>
+        <sys_update_name>sys_ui_page_7b624986db262fc0314cbedffe961948</sys_update_name>
+        <sys_updated_by>marcus.rippel</sys_updated_by>
+        <sys_updated_on>2018-12-29 13:30:20</sys_updated_on>
+    </sys_ui_page>
+</record_update>

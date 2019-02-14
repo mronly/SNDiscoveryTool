@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element extends="x_mure_sndiscovery_snd_root" label="SND UI Action" max_length="40" name="x_mure_sndiscovery_snd_uia" type="collection">
+    <element extends="x_mure_sndiscovery_snd_root" label="SND UI Action" max_length="40" name="x_mure_sndiscovery_snd_uia" sizeclass="1231" type="collection">
         <element attributes="import_attribute_name=app_scope,edge_encryption_enabled=true" label="App scope" max_length="40" name="app_scope" type="string"/>
         <element label="raw XML" max_length="8000" name="raw_xml" type="html"/>
         <element label="RemoteSysId" max_length="40" name="remotesysid" type="string"/>

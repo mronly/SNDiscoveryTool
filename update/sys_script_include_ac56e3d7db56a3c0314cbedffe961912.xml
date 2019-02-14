@@ -6,13 +6,14 @@
         <client_callable>false</client_callable>
         <description/>
         <name>SND_CI</name>
-        <script><![CDATA[var SND_CI = Class.create();
+        <script><![CDATA[/*jshint esnext: true */
+var SND_CI = Class.create();
 SND_CI.prototype = {
     initialize: function() {
 		this.config = {
 			"maxItems"   : 30,
 			"remoteUser" : "MR_SND",
-            "remotePwd"  : "e$51B8KZSb",
+            "remotePwd"  : "test",
             "instance"   : "123456789",
 			"storeXML"   : true,
 			"paging"     : 100,
@@ -57,6 +58,16 @@ SND_CI.prototype = {
 					    this.report.msg.info.push('no display vlaue for sys_scope');
 					}
 				}
+				//table_reference
+				switch(objRecord.sys_class_name.value) {
+					case 'sys_dictionary':
+						gr['table_referenze'] = objRecord.name.display_value;
+						break;
+					case 'sys_db_object':
+						gs.debug('table extened: ' + objRecord.super_class.value);
+						gr['table_referenze'] = objRecord.super_class.value;
+						break;
+				}
 				
 				gr['remotesysid'] = objRecord.sys_id.display_value;
 				//script Business Rules
@@ -90,6 +101,7 @@ SND_CI.prototype = {
 						this.createRelation( resVal, gr.sys_id, '6afd799338a02000c18673032c71b87b' );
 					}
 				}
+				/*
 				//ScriptIncludes
 				var regEx_Si = new RegExp(/new (.*?)*(.*?)\(/gmi);
 				while (res= regEx_Si.exec(tmpScript)) {
@@ -102,6 +114,7 @@ SND_CI.prototype = {
 						this.createRelation( resVal, gr.sys_id, '6afd799338a02000c18673032c71b87b' );
 					}
 				}
+				*/
 			}
 			
 			
@@ -147,10 +160,13 @@ SND_CI.prototype = {
 		}
 		return retVal;
 	},
-	getSysIdByNameType: function(remoteName,type) {
+	getSysIdByNameType: function(remoteName,type, addCondition) {
 		var retVal = -1;
 		var gr = new GlideRecord('x_mure_sndiscovery_snd_root');
         gr.addQuery('name',remoteName);
+		if(addCondition != undefined && addCondition != null) {
+			gr.addEncodedQuery(addCondition);
+		}
 		gr.addQuery('sys_class_name', 'x_mure_sndiscovery_snd_' + type);
         gr.addQuery('remote_instance', this.config.instance);
 		gr.query();
@@ -160,12 +176,16 @@ SND_CI.prototype = {
 		return retVal;
 	},
 	createRelation: function(from_sysid, to_sysid, type) {
+		try{
 			var grIn = new GlideRecord('cmdb_rel_ci');
 			grIn.initialize();
 			grIn.parent = from_sysid;
 			grIn.child = to_sysid;
 			grIn.type = type ; // sys_id of the Relationship Type
 			grIn.insert();
+		} catch (e) {
+			this.report.msg.error.push('create Relation' + e);
+		}
 	},
 	CallRemoteInstanceTable: function(strTable, strQuery, strNameField, strCIClass, objRelation) {
 		try{
@@ -206,7 +226,7 @@ SND_CI.prototype = {
 				httpResponseBody = response.getBody();
 				//  parse JSON string returned from request into a json object
 				parsed = new global.JSON().decode(httpResponseBody);
-				gs.debug("http response count: " + parsed.result.length);
+				///gs.debug("http response count: " + parsed.result.length);
 				// iterate over JSON object only printing the id property of JSON objects in results array
 				for (var i = 0; i < parsed.result.length; i++) {
 					gs.info('name: ' + parsed.result[i][strNameField].display_value);
@@ -215,9 +235,9 @@ SND_CI.prototype = {
 				}
 			}
 		}
-		catch (ex) {
-			var message = ex.getMessage();
-			gs.info(message);
+		catch (e) {
+			this.report.msg.error(e);
+			gs.error(e);
 		}
 		var tmpConfig = global.JSON.parse(global.JSON.stringify(this.config));
 		delete tmpConfig["remotePwd"];
@@ -242,7 +262,7 @@ SND_CI.prototype = {
         <sys_created_on>2018-12-16 10:04:08</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>ac56e3d7db56a3c0314cbedffe961912</sys_id>
-        <sys_mod_count>113</sys_mod_count>
+        <sys_mod_count>126</sys_mod_count>
         <sys_name>SND_CI</sys_name>
         <sys_package display_value="SNDiscoveryTool" source="x_mure_sndiscovery">3acd19bedb96ef80587fbc2ffe9619df</sys_package>
         <sys_policy>read</sys_policy>
@@ -250,6 +270,6 @@ SND_CI.prototype = {
         <sys_scope display_value="SNDiscoveryTool">3acd19bedb96ef80587fbc2ffe9619df</sys_scope>
         <sys_update_name>sys_script_include_ac56e3d7db56a3c0314cbedffe961912</sys_update_name>
         <sys_updated_by>marcus.rippel</sys_updated_by>
-        <sys_updated_on>2018-12-19 09:06:33</sys_updated_on>
+        <sys_updated_on>2018-12-20 08:39:07</sys_updated_on>
     </sys_script_include>
 </record_update>
